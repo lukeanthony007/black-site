@@ -32,15 +32,17 @@ Vertical slice scope and phase milestones.
 - [x] **Alert phases** (MGS-style escalation states)
 - [x] **Role-specific gameplay loops** (every role is fun)
 
+**Vertical Slice Complete (July 2026)**: Functional GoldenEye-style research wing with full stealth/combat loop, threat+demand, procedural-ish geometry, N64 retro visuals, objectives, extract, and rating system.
+
 ---
 
 ## 31. Development Milestones
 
 ### Phase 1: Core Movement
-- [ ] Sprint/jump/vault/wallrun/slide/dive-roll
-- [ ] Crouch sneak
-- [ ] Soft/hard landings
-- [ ] Movement at 60-120 FPS
+- [x] Sprint/jump/vault/wallrun/slide/dive-roll (core implemented; vault/wallrun polish pending)
+- [x] Crouch sneak
+- [x] Soft/hard landings (basic)
+- [x] Movement at 60-120 FPS
 
 ### Phase 2: Gun Feel
 - [ ] No-crosshair firing

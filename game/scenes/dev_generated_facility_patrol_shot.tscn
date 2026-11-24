@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/dev/generated_facility_patrol_shot.gd" id="1"]
+
+[node name="GeneratedFacilityPatrolShot" type="Node"]
+script = ExtResource("1")

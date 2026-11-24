@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="1"]
+[ext_resource type="Script" path="res://scripts/world/facility_builder.gd" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/mission_hud.tscn" id="3"]
+[ext_resource type="Script" path="res://scripts/mission/main.gd" id="5"]
+
+[sub_resource type="Environment" id="Environment_1"]
+background_mode = 1
+background_color = Color(0.02, 0.025, 0.035, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.63, 0.64, 0.66, 1)
+ambient_light_energy = 0.72
+tonemap_mode = 0
+tonemap_exposure = 1.0
+
+[node name="Main" type="Node3D"]
+script = ExtResource("5")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866, -0.354, 0.354, 0, 0.707, 0.707, -0.5, -0.612, 0.612, 0, 20, 0)
+light_energy = 0.3
+light_color = Color(0.95, 0.96, 1, 1)
+shadow_enabled = false
+
+[node name="Facility" type="Node3D" parent="."]
+script = ExtResource("2")
+
+[node name="Player" parent="." instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 1.5)
+
+[node name="MissionHUD" parent="." instance=ExtResource("3")]

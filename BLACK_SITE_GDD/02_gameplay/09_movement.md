@@ -19,12 +19,12 @@ Mirror's Edge-style parkour and traversal.
 
 | Move | Description | Notes |
 |------|-------------|-------|
-| **Vault/Mantle** | Ledge climb and obstacle hop | Context-sensitive |
-| **Wallrun** | Left/right wall traversal | Gravity scaling, time limit |
-| **Wallkick** | Launch off wall | Chain into other moves |
-| **Slide** | Speed conservation ground slide | Sprint + crouch |
-| **Dive-Roll** | GunZ-style aerial dodge | Shooting allowed during |
-| **Soft/Hard Landing** | Fall recovery | Affects noise + accuracy |
+| **Vault/Mantle** | Ledge climb and obstacle hop | Context-sensitive — **in gym motor** (`MotorConstants` band) |
+| **Wallrun** | Left/right wall traversal | Gravity scaling, time limit — **light v1 in gym** |
+| **Wallkick** | Launch off wall | Jump off wallrun — **basic** |
+| **Slide** | Speed conservation ground slide | Sprint + crouch — **in** |
+| **Dive-Roll** | GunZ-style aerial dodge | Shooting allowed during — deferred |
+| **Soft/Hard Landing** | Fall recovery | Affects noise + accuracy — **in** |
 
 **Additional traversal (roof/interior connectors):**
 - Ladders

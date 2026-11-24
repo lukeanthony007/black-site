@@ -1,0 +1,41 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Black Site"
+config/description="Cyber/Archives facility systems lab (generated facility is the launch test build)"
+run/main_scene="res://scenes/dev_generated_facility.tscn"
+config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+InputBootstrap="*res://scripts/world/input_bootstrap.gd"
+ObjectiveTracker="*res://scripts/mission/objective_tracker.gd"
+GameAudio="*res://scripts/world/game_audio.gd"
+NoiseBus="*res://scripts/world/noise_bus.gd"
+AlertPhase="*res://scripts/world/alert_phase.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+
+[layer_names]
+
+3d_physics/layer_1="world"
+3d_physics/layer_2="player"
+3d_physics/layer_3="enemies"
+
+[rendering]
+
+textures/default_filters/anisotropic_filtering_level=0

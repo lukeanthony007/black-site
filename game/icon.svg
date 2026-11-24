@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128">
+  <rect width="128" height="128" fill="#1a1a1a"/>
+  <rect x="24" y="24" width="80" height="80" fill="none" stroke="#c4a35a" stroke-width="6"/>
+  <text x="64" y="74" text-anchor="middle" font-family="monospace" font-size="28" fill="#c4a35a">BS</text>
+</svg>

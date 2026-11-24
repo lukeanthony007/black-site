@@ -1,0 +1,23 @@
+{
+  "sources": [
+    {
+      "name": "Cincinnati Building Footprints",
+      "provider": "City of Cincinnati / CAGIS",
+      "url": "https://data.cincinnati-oh.gov/dataset/Building-Footprints/7ebd-3mek",
+      "license": "Public Domain"
+    },
+    {
+      "name": "OpenStreetMap",
+      "provider": "OpenStreetMap contributors",
+      "url": "https://www.openstreetmap.org/copyright",
+      "license": "ODbL 1.0 \u2014 attribution required in credits"
+    },
+    {
+      "name": "USGS 3DEP Elevation",
+      "provider": "U.S. Geological Survey",
+      "url": "https://www.usgs.gov/3d-elevation-program",
+      "license": "No restrictions"
+    }
+  ],
+  "notes": "No Mapillary, KartaView, or Google Street View imagery in this export."
+}

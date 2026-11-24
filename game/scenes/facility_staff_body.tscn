@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" uid="uid://dlvj65ufixb43" path="res://scripts/ai/facility_staff_body.gd" id="1_staff_body"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_staff"]
+radius = 0.35
+height = 1.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uniform"]
+albedo_color = Color(0.16, 0.3, 0.38, 1)
+roughness = 0.85
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_uniform"]
+material = SubResource("StandardMaterial3D_uniform")
+radius = 0.3
+height = 1.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_skin"]
+albedo_color = Color(0.72, 0.52, 0.38, 1)
+roughness = 0.9
+
+[sub_resource type="SphereMesh" id="SphereMesh_head"]
+material = SubResource("StandardMaterial3D_skin")
+radius = 0.2
+height = 0.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_badge"]
+albedo_color = Color(0.82, 0.9, 0.88, 1)
+roughness = 0.65
+
+[sub_resource type="BoxMesh" id="BoxMesh_badge"]
+material = SubResource("StandardMaterial3D_badge")
+size = Vector3(0.12, 0.16, 0.015)
+
+[node name="FacilityStaffBody" type="CharacterBody3D"]
+collision_layer = 4
+collision_mask = 1
+floor_snap_length = 0.35
+floor_max_angle = 1.0472
+safe_margin = 0.03
+floor_constant_speed = true
+floor_block_on_wall = false
+script = ExtResource("1_staff_body")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+position = Vector3(0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_staff")
+
+[node name="Body" type="Node3D" parent="."]
+
+[node name="Uniform" type="MeshInstance3D" parent="Body"]
+position = Vector3(0, 0.88, 0)
+mesh = SubResource("CapsuleMesh_uniform")
+
+[node name="Head" type="MeshInstance3D" parent="Body"]
+position = Vector3(0, 1.62, 0)
+mesh = SubResource("SphereMesh_head")
+
+[node name="CredentialBadge" type="MeshInstance3D" parent="Body"]
+position = Vector3(0.16, 1.22, -0.285)
+mesh = SubResource("BoxMesh_badge")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.4
+target_desired_distance = 0.45
+radius = 0.4
+height = 1.8

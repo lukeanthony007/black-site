@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="1"]
+[ext_resource type="Script" path="res://scripts/world/parkour_course_builder.gd" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/mission_hud.tscn" id="3"]
+[ext_resource type="Script" path="res://scripts/mission/parkour_main.gd" id="4"]
+
+[sub_resource type="Environment" id="Environment_1"]
+background_mode = 1
+background_color = Color(0.62, 0.78, 0.92, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.9, 0.93, 0.97, 1)
+ambient_light_energy = 0.85
+tonemap_mode = 0
+tonemap_exposure = 1.1
+fog_enabled = true
+fog_light_color = Color(0.72, 0.82, 0.92, 1)
+fog_density = 0.0025
+fog_aerial_perspective = 0.55
+fog_sky_affect = 0.4
+
+[node name="ParkourCourse" type="Node3D"]
+script = ExtResource("4")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.8, -0.4, 0.45, 0, 0.75, 0.66, -0.6, -0.53, 0.6, 10, 60, 20)
+light_energy = 1.35
+light_color = Color(1, 0.97, 0.9, 1)
+shadow_enabled = false
+
+[node name="Course" type="Node3D" parent="."]
+script = ExtResource("2")
+
+[node name="Player" parent="." instance=ExtResource("1")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 24.6, 1.5)
+
+[node name="MissionHUD" parent="." instance=ExtResource("3")]

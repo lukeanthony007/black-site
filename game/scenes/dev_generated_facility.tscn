@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/dev/generated_facility_main.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/mission_hud.tscn" id="3"]
+
+[sub_resource type="Environment" id="Environment_generated"]
+background_mode = 1
+background_color = Color(0.025, 0.035, 0.05, 1)
+ambient_light_source = 1
+ambient_light_color = Color(0.42, 0.50, 0.62, 1)
+ambient_light_energy = 0.85
+
+[node name="GeneratedFacilityMain" type="Node3D"]
+script = ExtResource("1")
+operator_run = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_generated")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-58, -32, 0)
+light_color = Color(0.78, 0.86, 1, 1)
+light_energy = 0.35
+shadow_enabled = true
+
+[node name="InspectionLight" type="OmniLight3D" parent="."]
+position = Vector3(0, 8, 0)
+light_color = Color(0.72, 0.84, 1, 1)
+light_energy = 0.0
+omni_range = 48.0
+shadow_enabled = false
+visible = false
+
+[node name="Player" parent="." instance=ExtResource("2")]
+
+[node name="MissionHUD" parent="." instance=ExtResource("3")]

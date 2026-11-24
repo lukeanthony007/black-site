@@ -1,0 +1,30 @@
+{
+  "slice": "vine_main",
+  "meters_per_unit": 1.0,
+  "origin": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "gis_origin": {
+    "x": 714651.6179954752,
+    "y": 4331662.553109562,
+    "z": 163.79513549804688
+  },
+  "terrain": {
+    "cols": 315,
+    "rows": 220,
+    "cell_m": 2.0,
+    "origin_x": -314.19783876126166,
+    "origin_z": 219.64004190452397,
+    "min_y": 0.0,
+    "max_y": 4.080198764801025
+  },
+  "building_count": 183,
+  "street_count": 403,
+  "attribution": [
+    "Building footprints: City of Cincinnati / CAGIS (public domain)",
+    "Streets: OpenStreetMap contributors (ODbL)",
+    "Elevation: USGS 3DEP / National Map (no restrictions)"
+  ]
+}
